@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/img/icco.png">
+    
+    <title>CATALO 5.0</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="eel.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="import" href="/site.html">
+  </head>
+<body><div class="main">
+    <h1>CATALO</h1>
+    <span class="zz anim">Goodini || 5.0</span>
+    <div class="stage">
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+        <div class="layer"></div>
+      </div>
+      <style>
+        * *, *::before, *::after { 
+          animation-play-state: running !important;
+        }
+      </style>
+
+      <button type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="res(false)">
+        Посмотреть информацию
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Данные</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="info">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+        Определенные сайты(выбор)
+      </button>
+      <button type="button"  class="btn btn-primary" onclick="beackup()">Загрузить послдеднее</button>
+      <div class="modal fade" id="exampleModal1" tabindex="-2" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel1">Определенные сайты</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="info1">
+              <input type="text" id="serch" class="serch">
+                <form name="publish1" id="pub1" onsubmit="return false;">
+                </form>
+                <script>
+                  function beackup(){
+                    eel.beackup();
+                  }
+                  eel.expose(beackupsh);
+                  function beackupsh(namecl1, city1, cityr1,ciadress1,street1, home1, adress1,numclinic1,ind1,fio1,timework1,url1,mail1,keysl1,passw1,desc1,tupecl1){
+                    //eel.beackup();
+                    //alert()
+                    document.getElementById('namecl').value=namecl1;
+                    document.getElementById('city').value=city1;
+                    document.getElementById('cityr').value=cityr1;
+                    document.getElementById('street').value=street1;
+                    document.getElementById('ciadress').value=ciadress1;
+                    document.getElementById('home').value=home1;
+                    document.getElementById('adress').value=adress1;
+                    document.getElementById('ind').value=ind1;
+                    document.getElementById('fio').value=fio1;
+                    document.getElementById('timework').value=timework1;
+                    document.getElementById('urll').value=url1;
+                    document.getElementById('mail').value=mail1;
+                    document.getElementById('keysl').value=keysl1;
+                    document.getElementById('passw').value=passw1;
+                    document.getElementById('desc').value=desc1;
+                    document.getElementById('tupecl').value=tupecl1;
+                    document.getElementById('numn').value=numclinic1;
+                  }
+                  inf=document.getElementById('pub1');
+                  namesite=["1. spravochnik.city","2. компаниирф.рф","3. россия.бесплатныеобъявления.рф",
+                  "4. spravkainform.ru","5. otzyvgid.ru","6. baza-r.ru",
+                  "7. companyinform.ru","8. guidetorussia.ru","9. spravkarf24.ru",
+                  "10. 123ru.market","11. topserver.ru","12. my.flado.ru",
+                  "13. medfirms.ru","14. msk.med.firmika.ru","15. www.infomesto.com",
+                  "16. feech.org","17. korden.org","18. www.dorus.ru",
+                  "19. rydo.ru","20. llike.ru","21. firmexpert.ru",
+                  "22. narkologicheskie-kliniki.com","23. prostoboss.com","24. tvoyaspravka.ru",
+                  "25. dbo.ru","26. mycompany.su","27. rstv.wikiotzyv.org",
+                  "28. spravkaru.info","29. www.doski.ru","30. fis.ru",
+                  "31. www.orgpage.ru","32. www.opt-union.ru","33. firmlist.ru",
+                  "34. веб-службы.рф","35. телефонырф.рф","36. promportal.su",
+                  "37. moyaspravka.ru","38. user.regtorg.ru","39. centr.bizspravka.org",
+                  "40. spravochnikov.ru","41. msk.damspravku.ru","42. 1000dosok.ru",
+                  "43. cabinet.tradedir.ru","44. yndx.ru","45. kazan.spravka-region.ru",
+                  "46. catalog-777.com","47. www.spr.ru","48. www.loglink.ru",
+                  "49. russiabase.ru","50. mxkr.ru","51. orgsinfo.ru",
+                  "52. твояфирма.рф","53. moskva.reginforms.ru","54. www.otzywy.com",
+                  "55. www.allinform.ru","56. spravka.me","57. morefirm.ru",
+                  "58. spravochnik-rf.ru","59. asktel.ru","60. orghost.ru",
+                  "61. vibirai.ru","62. www.barahla.net","63. твоястрана.рф",
+                  "64. bpages.ru","65. strananaladoni.ru","66. spravkarf.ru",
+                  "67. rusfirm.biz","68. totadres.ru","69. 495ru.ru",
+                  "70. ot-boli.ru","71. allrus.business","72. gmstar.ru",
+                  "73. spravka7.ru","74. bigspr.ru","75. bizly.ru",
+                  "76. www.russiacompany.ru","77. moskva.russiacatalog.ru","78. bigspravka.ru",
+                  "79. наркологические-клиники.рф","80. beauty-rating.ru","81. translit-online.ru",
+                  "82. ruscatalog.org","83. www.invictory.com",
+                  "84	spravlist.ru","85	www.binfo.ru","86	www.conon.ru",
+                  "87	n4.biz","88	www.vsego.ru","89	wk3.ru",
+                  "90	rfadres.ru","91	resrex.ru","92	www.plan1.ru",
+                  "93	placesrf.ru","94 orgsprav.com","95 orgcatalog.ru",
+                  "96	mapmax.ru","97 vse-otzivy.ru","98	mnenie-sotrudnikov.ru",
+                  "99	icomms.ru","100	gdefirmi.ru","101	firmap.ru",
+                  "102 blizko.pro","103	adresa-nomera.ru","104 infaplus.ru",
+                  "105 katpo.ru","106	catcompany.ru","107 адреса.рф",
+                  "108 myfirms.su","109	bdpoi.ru","110 pishem-otzyvy.ru",
+                  "111 nnit.ru","112 btk-online.ru","113 www.catalogvn.ru",
+                  "114 2msk.ru","115 lengid.ru","116 www.sdki.ru",
+                  "117 www.sitebase.ru","118 esbd.ru","119 orgrf.ru",
+                  "120 adres-moskva.ru","121 adres-spb.ru","122	adresgid.ru",
+                  "123 moskva.nashigoroda.ru","124 www.org77.ru","125	sp-city.ru",
+                  "126 tradeis.ru","127	vbalashihe.ru","128	b2b-russia.ru",
+                  "129 офирмах.рф","130	optom365.ru","131	www.nofollow.ru",
+                  "132 www.infrus.ru","133 odintsovo.biz","134 info-torg.ru",
+                  "135 spravka.city","136	nashaspravka.ru","137	адреса.рф",
+                  "138 kaz.all-gorod.ru","139	tilbagevise.ru","140 msk24.net",];
+
+                  serch=document.getElementById('serch');//alert(namesite.length);
+                  for(i=1;i<namesite.length+1;i++){
+                    inf.innerHTML+='<p id="pch'+i+'"><input type="checkbox" id="ch'+i+'" value="'+i+'">'+namesite[i-1]+'</p>';
+                  }
+                  serch.oninput = function() {
+                    inf.innerHTML='';
+                    for(i=1;i<namesite.length+1;i++){
+                      inf.innerHTML+='<p id="pch'+i+'"><input type="checkbox" id="ch'+i+'" value="'+i+'">'+namesite[i-1]+'</p>';
+                      if(!String(namesite[i-1]).includes(String(serch.value))){
+                        //inf.innerHTML+='<p><input type="checkbox" id="ch'+i+'" value="'+i+'">'+namesite[i-1]+'</p>';
+                      $('#ch'+i).hide();$('#pch'+i).hide();
+                         }
+                  }
+                  };
+                  function typef(){
+                    var e = document.getElementById("sta");
+                    var value = e.value;
+                    var status = e.options[e.selectedIndex].text;
+                    if(status=="Определенные"){
+                      $('#otr1').hide();
+                      $('#hotr1').hide();
+                      $('#otr2').hide();
+                      $('#hotr2').hide();
+                    }
+                    if(status=="Все"){
+                      $('#otr1').hide();
+                      $('#hotr1').hide();
+                      $('#otr2').hide();
+                      $('#hotr2').hide();
+                    }
+                    if(status=="Отрезок"){
+                      $('#otr1').show();
+                      $('#hotr1').show();
+                      $('#otr2').show();
+                      $('#hotr2').show();
+                      document.getElementById('hotr1').textContent = 'Начало диапазона';
+                    }
+                    if(status=="Количество"){
+                      $('#otr1').show();
+                      $('#hotr1').show();
+                      $('#otr2').hide();
+                      $('#hotr2').hide();
+                      document.getElementById('hotr1').textContent = 'Введите количество';
+                    }
+                    //info.innerHTML=text;
+                  }
+                //info.innerHTML+='<p><input type="checkbox" id="ch1" value="1">spravochnik.city</p>';
+</script>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <a href="javascript:;" onclick="window.location='./site.html'"><button class="btn-primary">Определенные сайты</button></a> -->
+    <form name="publish" id="pub" onsubmit="return false;">
+        <div class="content">
+            <div class="col1">
+                <select name="sta" id="sta" onchange="typef()">
+                    <option value="1">Все</option>
+                    <option value="2">Отрезок</option>
+                    <option value="3">Определенные</option>
+                    <option value="4">Количество</option>
+                    <option value="5">Экспресс(beta)</option>
+                </select><br>
+                <h4 id="hstatus">Перечислите сайты<br>(если выбрать 'Определенные сайты')</h4>
+                <textarea name="status" id="status" cols="25" rows="3" placeholder="146"></textarea>
+                <h4 id="hotr1">Начало диапазона<br>(Кол-во,если выбрано количество)</h4>
+                <input type="text" id="otr1" placeholder="3">
+                <h4 id="hotr2">Конец диапазона</h4>
+                <input type="text" id="otr2" placeholder="83"><br><br>
+                <textarea name="notwww" id="notwww" cols="25" rows="3" placeholder="Сайты которые не работают"></textarea>
+                <h4>Название клиники *</h4>
+                <input type="text" id="namecl" placeholder="Течение клиника" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Всплывающее окно вверх">
+                <h4>Город *</h4>
+                <input type="text" id="city" placeholder="Иркутск">
+                <h4>Регион(область, край) *</h4>
+                <input type="text" id="cityr" placeholder="Иркутская область">
+                <h4>Город, адрес *</h4>
+                <input type="text" id="ciadress" placeholder="Иркутск, ул. Ленина 25">
+                <h4>Улица *</h4>
+                <input type="text" id="street" placeholder="ул. Ленина">
+                <h4>Дом *</h4>
+                <input type="text"  id="home" placeholder="25">
+            </div>
+            <div class="col2">
+                <h4>Улица, дом *</h4>
+                <input type="text" id="adress" placeholder="ул. Ленина 25"  data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Всплывающее окно вверх">
+                <h4 id="hnumn">Номер *</h4>
+                <input type="text" id="numn" name="numn" placeholder="9953334910">
+                <p id="er1" style="color: red;position: absolute; top: 240px;"></p>
+                <h4>Индекс</h4>
+                <input type="text" id="ind" placeholder="565629">
+                <h4>ФИО</h4>
+                <input type="text" id="fio" name="fio" class="fio" placeholder="Дронов Михаил Иванович">
+                <p id="er2" style="color: red;position: absolute; top: 356px;"></p>
+                <h4>Время работы</h4>
+                <input type="text" id="timework" placeholder="Круглосуточно, ежедневно">
+                <h4>Ссылка на сайт *</h4>
+                <input type="text" id="urll" placeholder="https://narcolog-pro.ru/regions/kostroma/">
+                <h4>Email *</h4>
+                <input type="text" id="mail" name="mail" class="mail" placeholder="kostroma@narcolog-pro.ru">
+                <p id="er3" style="color: red;position: absolute; top: 530px;"></p>
+                <h4>Ключевые слова</h4>
+                <input type="text" id="keysl" placeholder="нарколог на дом, вывод из запоя, лечение от алкоголизма, кодирование от алкоголизма, наркологическая помощь, лечение наркомании">
+                <p>нарколог на дом, вывод из запоя, лечение от алкоголизма, кодирование от алкоголизма, наркологическая помощь, лечение наркомании</p>
+                <h4>Пароль</h4>
+                <input type="text" id="passw" placeholder="LW9Tx44d">
+              </div>
+            <div class="col3">
+                
+                <h4>Описание</h4>
+                <textarea name="desc" id="desc" cols="25" rows="10" placeholder="Медицинское учреждение, в котором можно получить профессиональную помощь. Правильное лечение освобождает больного от тяжелой разрушающей жизнь патологии. Мы идем в ногу со временем, совмещая богатый опыт и знания в области практической медицины с новейшими методиками диагностики и лечения алкоголизма."></textarea>
+                <p>Наркологическая клиника ///Название/// – медицинское учреждение, в котором можно получить профессиональную помощь. Правильное лечение освобождает больного от тяжелой разрушающей жизнь патологии. Мы идем в ногу со временем, совмещая богатый опыт и знания в области практической медицины с новейшими методиками диагностики и лечения алкоголизма.</p>
+                <h4>Сфера *</h4>
+                <input type="text" id="tupecl" placeholder="Клиника наркологической помощи">
+                <br><br><button type="button" class="button btn btn-primary" onclick="res(true)">Начать</button>
+                <div class="stat">Выполняется...</div>
+            </div>
+        </div>  
+    </form><br><br>
+
+<script>$('#otr1').hide();
+  $('#status').hide();
+  $('#hstatus').hide();
+                      $('#hotr1').hide();
+                      $('#otr2').hide();
+                      $('#hotr2').hide();
+  function osite(){
+    eel.opsite();
+  }
+  window.addEventListener("resize", function(){
+    window.resizeTo(920, 870);
+    });
+
+        $('.stat').hide();
+        function ca(status,otr1,otr2,urli,notwww,namecl,unamecl,city,cityr,ciadress,street,home,adress,numclinic,numtrue,namepers,fio,f,i,o,timework,urll,mail,keysl,desc,tupecl,passw,login,numcodcity,numclshot,numn,numpl,shcir,regi,ob,bb,ind){
+            if(status=="Определенные сайты"){
+                var status = document.getElementById('status').value;
+            }
+            setTimeout(function() {$('.stat').show();
+            setTimeout(function() {$('.stat').hide();
+            setTimeout(function() {$('.stat').show();}, (100));
+            setTimeout(function() {$('.stat').hide();}, (200));
+            setTimeout(function() {$('.stat').show();}, (300));
+            setTimeout(function() {$('.stat').hide();}, (400));
+          }, (100));
+          }, (100));
+          valid=true;
+
+          if (numn.length > 10 || numn.includes('+') == true ||numn.length == 9) {
+            znumn=document.getElementById('numn').value;
+            $("#numn").css({"backgroundColor":"#ffa0a0"});
+            //document.getElementById('er1').textContent = 'Введите номер верно';
+            document.getElementById('numn').value='Введите номер верно';
+            setTimeout(() => {  
+              //document.getElementById('er1').textContent = ''; 
+              document.getElementById('numn').value=numn;
+              $("#numn").css({"backgroundColor":"white"});
+            }, 3000);
+            znumn="";
+            setTimeout(function() {znumn=numn;}, (150));
+            setTimeout(function() {znumn="";}, (300));
+            setTimeout(function() {znumn=numn;}, (450));
+            setTimeout(function() {znumn="";}, (600));
+            setTimeout(function() {znumn=numn;}, (750));
+            valid = false;
+        }
+        if((fio.split(" ").length) - 1 != 2 || (fio.split(" ").length)-1 > 2){
+          if(fio != ""){
+            zfio=document.getElementById('fio').value;
+          $("#fio").css({"backgroundColor":"#ffa0a0"},{"color":"red"});
+          zfio=document.getElementById('fio').value='введите ФИО';
+            //document.getElementById('er2').textContent = 'введите ФИО';
+            setTimeout(() => {  
+              //document.getElementById('er2').textContent = '';
+              zfio=document.getElementById('fio').value=fio;
+              $("#fio").css({"backgroundColor":"white"});
+            }, 3000);
+            zfio="";
+            setTimeout(function() {zfio=fio;}, (150));
+            setTimeout(function() {zfio="";}, (300));
+            setTimeout(function() {zfio=fio;}, (450));
+            setTimeout(function() {zfio="";}, (600));
+            setTimeout(function() {zfio=fio;}, (750));
+            valid = false;
+        }}
+        if(mail.includes('@') != true){
+          if(mail != ""){
+          zmail=document.getElementById('mail').value;
+          $("#mail").css({"backgroundColor":"#ffa0a0"});
+          //document.getElementById('er3').textContent = 'Введите email верно';
+          document.getElementById('mail').value='Введите email верно';
+          setTimeout(() => {  
+          //document.getElementById('er3').textContent = ''; 
+          document.getElementById('mail').value=mail;
+          $("#mail").css({"backgroundColor":"white"});
+        }, 3000);
+        zmail="";
+            setTimeout(function() {zmail=mail;}, (150));
+            setTimeout(function() {zmail="";}, (300));
+            setTimeout(function() {zmail=mail;}, (450));
+            setTimeout(function() {zmail="";}, (600));
+            setTimeout(function() {zmail=mail;}, (750));
+        valid = false;
+        }}
+        
+        if(desc.includes("Название") == true){
+          if(desc != ""){
+            zdesc=document.getElementById('desc').value;
+            zdesc="";
+          $("#desc").css({"backgroundColor":"#ffa0a0"});
+          setTimeout(() => {  $("#desc").css({"backgroundColor":"white"}); }, 3000);
+            setTimeout(function() {zdesc=desc;}, (150));
+            setTimeout(function() {zdesc="";}, (300));
+            setTimeout(function() {zdesc=desc;}, (450));
+            setTimeout(function() {zdesc="";}, (600));
+            setTimeout(function() {zdesc=desc;}, (750));
+            valid = false;
+        }}
+        
+        if(valid == true){var sites=[];
+          /*for(i=1;i<namesite.length;i++){
+            if(String(namesite[i-1]).includes(String(serch.value))){
+              inf.innerHTML+='<p><input type="checkbox" id="ch'+i+'" value="'+i+'">'+namesite[i-1]+'</p>';
+              if (ch.checked) {sites.push($("#ch2").val());}
+               }
+        }*/
+        //alert(mas);
+        /*for(i=1;i<141;i++){
+          if (ch.checked) {sites.push($("#ch"+i).val());}
+        }*/
+          if (ch1.checked) {sites.push($("#ch1").val());}
+          if (ch2.checked) {sites.push($("#ch2").val());}
+          if(ch3.checked) {sites.push($("#ch3").val());}
+          if(ch4.checked) {sites.push($("#ch4").val());}
+if(ch5.checked) {sites.push($("#ch5").val());}
+if(ch6.checked) {sites.push($("#ch6").val());}
+if(ch7.checked) {sites.push($("#ch7").val());}
+if(ch8.checked) {sites.push($("#ch8").val());}
+if(ch9.checked) {sites.push($("#ch9").val());}
+if(ch10.checked) {sites.push($("#ch10").val());}
+if(ch11.checked) {sites.push($("#ch11").val());}
+if(ch12.checked) {sites.push($("#ch12").val());}
+if(ch13.checked) {sites.push($("#ch13").val());}
+if(ch14.checked) {sites.push($("#ch14").val());}
+if(ch15.checked) {sites.push($("#ch15").val());}
+if(ch16.checked) {sites.push($("#ch16").val());}
+if(ch17.checked) {sites.push($("#ch17").val());}
+if(ch18.checked) {sites.push($("#ch18").val());}
+if(ch19.checked) {sites.push($("#ch19").val());}
+if(ch20.checked) {sites.push($("#ch20").val());}
+if(ch21.checked) {sites.push($("#ch21").val());}
+if(ch22.checked) {sites.push($("#ch22").val());}
+if(ch23.checked) {sites.push($("#ch23").val());}
+if(ch24.checked) {sites.push($("#ch24").val());}
+if(ch25.checked) {sites.push($("#ch25").val());}
+if(ch26.checked) {sites.push($("#ch26").val());}
+if(ch27.checked) {sites.push($("#ch27").val());}
+if(ch28.checked) {sites.push($("#ch28").val());}
+if(ch29.checked) {sites.push($("#ch29").val());}
+if(ch30.checked) {sites.push($("#ch30").val());}
+if(ch31.checked) {sites.push($("#ch31").val());}
+if(ch32.checked) {sites.push($("#ch32").val());}
+if(ch33.checked) {sites.push($("#ch33").val());}
+if(ch34.checked) {sites.push($("#ch34").val());}
+if(ch35.checked) {sites.push($("#ch35").val());}
+if(ch36.checked) {sites.push($("#ch36").val());}
+if(ch37.checked) {sites.push($("#ch37").val());}
+if(ch38.checked) {sites.push($("#ch38").val());}
+if(ch39.checked) {sites.push($("#ch39").val());}
+if(ch40.checked) {sites.push($("#ch40").val());}
+if(ch41.checked) {sites.push($("#ch41").val());}
+if(ch42.checked) {sites.push($("#ch42").val());}
+if(ch43.checked) {sites.push($("#ch43").val());}
+if(ch44.checked) {sites.push($("#ch44").val());}
+if(ch45.checked) {sites.push($("#ch45").val());}
+if(ch46.checked) {sites.push($("#ch46").val());}
+if(ch47.checked) {sites.push($("#ch47").val());}
+if(ch48.checked) {sites.push($("#ch48").val());}
+if(ch49.checked) {sites.push($("#ch49").val());}
+if(ch50.checked) {sites.push($("#ch50").val());}
+if(ch51.checked) {sites.push($("#ch51").val());}
+if(ch52.checked) {sites.push($("#ch52").val());}
+if(ch53.checked) {sites.push($("#ch53").val());}
+if(ch54.checked) {sites.push($("#ch54").val());}
+if(ch55.checked) {sites.push($("#ch55").val());}
+if(ch56.checked) {sites.push($("#ch56").val());}
+if(ch57.checked) {sites.push($("#ch57").val());}
+if(ch58.checked) {sites.push($("#ch58").val());}
+if(ch59.checked) {sites.push($("#ch59").val());}
+if(ch60.checked) {sites.push($("#ch60").val());}
+if(ch61.checked) {sites.push($("#ch61").val());}
+if(ch62.checked) {sites.push($("#ch62").val());}
+if(ch63.checked) {sites.push($("#ch63").val());}
+if(ch64.checked) {sites.push($("#ch64").val());}
+if(ch65.checked) {sites.push($("#ch65").val());}
+if(ch66.checked) {sites.push($("#ch66").val());}
+if(ch67.checked) {sites.push($("#ch67").val());}
+if(ch68.checked) {sites.push($("#ch68").val());}
+if(ch69.checked) {sites.push($("#ch69").val());}
+if(ch70.checked) {sites.push($("#ch70").val());}
+if(ch71.checked) {sites.push($("#ch71").val());}
+if(ch72.checked) {sites.push($("#ch72").val());}
+if(ch73.checked) {sites.push($("#ch73").val());}
+if(ch74.checked) {sites.push($("#ch74").val());}
+if(ch75.checked) {sites.push($("#ch75").val());}
+if(ch76.checked) {sites.push($("#ch76").val());}
+if(ch77.checked) {sites.push($("#ch77").val());}
+if(ch78.checked) {sites.push($("#ch78").val());}
+if(ch79.checked) {sites.push($("#ch79").val());}
+if(ch80.checked) {sites.push($("#ch80").val());}
+if(ch81.checked) {sites.push($("#ch81").val());}
+if(ch82.checked) {sites.push($("#ch82").val());}
+if(ch83.checked) {sites.push($("#ch83").val());}
+if(ch84.checked) {sites.push($("#ch84").val());}
+if(ch85.checked) {sites.push($("#ch85").val());}
+if(ch86.checked) {sites.push($("#ch86").val());}
+if(ch87.checked) {sites.push($("#ch87").val());}
+if(ch88.checked) {sites.push($("#ch88").val());}
+if(ch89.checked) {sites.push($("#ch89").val());}
+if(ch90.checked) {sites.push($("#ch90").val());}
+if(ch91.checked) {sites.push($("#ch91").val());}
+if(ch92.checked) {sites.push($("#ch92").val());}
+if(ch93.checked) {sites.push($("#ch93").val());}
+if(ch94.checked) {sites.push($("#ch94").val());}
+if(ch95.checked) {sites.push($("#ch95").val());}
+if(ch96.checked) {sites.push($("#ch96").val());}
+if(ch97.checked) {sites.push($("#ch97").val());}
+if(ch98.checked) {sites.push($("#ch98").val());}
+if(ch99.checked) {sites.push($("#ch99").val());}
+if(ch100.checked) {sites.push($("#ch100").val());}
+if(ch101.checked) {sites.push($("#ch101").val());}
+if(ch102.checked) {sites.push($("#ch102").val());}
+if(ch103.checked) {sites.push($("#ch103").val());}
+if(ch104.checked) {sites.push($("#ch104").val());}
+if(ch105.checked) {sites.push($("#ch105").val());}
+if(ch106.checked) {sites.push($("#ch106").val());}
+if(ch107.checked) {sites.push($("#ch107").val());}
+if(ch108.checked) {sites.push($("#ch108").val());}
+if(ch109.checked) {sites.push($("#ch109").val());}
+if(ch110.checked) {sites.push($("#ch110").val());}
+if(ch111.checked) {sites.push($("#ch111").val());}
+if(ch112.checked) {sites.push($("#ch112").val());}
+if(ch113.checked) {sites.push($("#ch113").val());}
+if(ch114.checked) {sites.push($("#ch114").val());}
+if(ch115.checked) {sites.push($("#ch115").val());}
+if(ch116.checked) {sites.push($("#ch116").val());}
+if(ch117.checked) {sites.push($("#ch117").val());}
+if(ch118.checked) {sites.push($("#ch118").val());}
+if(ch119.checked) {sites.push($("#ch119").val());}
+if(ch120.checked) {sites.push($("#ch120").val());}
+if(ch121.checked) {sites.push($("#ch121").val());}
+if(ch122.checked) {sites.push($("#ch122").val());}
+if(ch123.checked) {sites.push($("#ch123").val());}
+if(ch124.checked) {sites.push($("#ch124").val());}
+if(ch125.checked) {sites.push($("#ch125").val());}
+if(ch126.checked) {sites.push($("#ch126").val());}
+if(ch127.checked) {sites.push($("#ch127").val());}
+if(ch128.checked) {sites.push($("#ch128").val());}
+if(ch129.checked) {sites.push($("#ch129").val());}
+if(ch130.checked) {sites.push($("#ch130").val());}
+if(ch131.checked) {sites.push($("#ch131").val());}
+if(ch132.checked) {sites.push($("#ch132").val());}
+if(ch133.checked) {sites.push($("#ch133").val());}
+if(ch134.checked) {sites.push($("#ch134").val());}
+if(ch135.checked) {sites.push($("#ch135").val());}
+if(ch136.checked) {sites.push($("#ch136").val());}
+if(ch137.checked) {sites.push($("#ch137").val());}
+if(ch138.checked) {sites.push($("#ch138").val());}
+if(ch139.checked) {sites.push($("#ch139").val());}
+if(ch140.checked) {sites.push($("#ch140").val());}
+
+          eel.conti(status,urli,otr1,otr2,urli,notwww,namecl,unamecl,city,cityr,ciadress,street,home,adress,numn,numn,namepers,fio,f,i,o,timework,urll,mail,keysl,desc,tupecl,passw,login,numn,numn,numn,numn,shcir,regi,ob,bb,ind,sites);
+        }
+        };
+          function opr() {
+            $('#status').hide();
+          }
+          function res(valid) {
+            var namecl = document.getElementById('namecl').value;
+              var fio = document.getElementById('fio').value;
+              var city = document.getElementById('city').value;
+              var numn = document.getElementById('numn').value;
+              var cityr = document.getElementById('cityr').value;
+              var ciadress = document.getElementById('ciadress').value;
+              var timework = document.getElementById('timework').value;
+              var street = document.getElementById('street').value;
+              var mail = document.getElementById('mail').value;
+              var home = document.getElementById('home').value;
+              var keysl = document.getElementById('keysl').value;
+              var adress = document.getElementById('adress').value;
+              var desc = document.getElementById('desc').value;
+              var tupecl = document.getElementById('tupecl').value;
+              var status = document.getElementById('status').value;
+              var passw = document.getElementById('passw').value;
+             var urll = document.getElementById('urll').value;
+              var otr1 = document.getElementById('otr1').value;
+              var otr2 = document.getElementById('otr2').value;
+              var notwww = document.getElementById('notwww').value;
+              var a=document.getElementById('sta');
+              var sta=a.options[a.selectedIndex].text;
+              var ind = document.getElementById('ind').value;
+              if(fio==""){
+                fio="Дронов Михаил Иванович";
+                f="Дронов";
+                i="Михаил";
+                o="Иванович";
+              }
+              if(timework==""){timework="Круглосуточно, ежедневно";}
+              if(keysl==""){keysl="нарколог на дом, вывод из запоя, лечение от алкоголизма, кодирование от алкоголизма, наркологическая помощь, лечение наркомании";}
+              if(desc==""){desc="Медицинское учреждение, в котором можно получить профессиональную помощь. Правильное лечение освобождает больного от тяжелой разрушающей жизнь патологии. Мы идем в ногу со временем, совмещая богатый опыт и знания в области практической медицины с новейшими методиками диагностики и лечения алкоголизма.";}
+              if(passw==""){passw="LW9Tx44d";}
+              if(tupecl==""){tupecl="Клиника наркологической помощи";}
+              if(valid){
+                ca(sta,otr1,otr2,"urli",notwww,namecl,"unamecl",city,cityr,ciadress,street,home,adress,numn,"000","namepers",fio,"f","i","o",timework,urll,mail,keysl,desc,tupecl,passw,"login123",numn,numn,numn,numn," "," "," ","Ф",ind);
+            
+              }
+              else{
+var login="login-"+mail.split('@')[0]+"123"
+                br="<br>";
+                info=document.getElementById('info');
+                info.innerHTML='<div style="font-weight: 600;display: contents;">Название:</div> '+namecl+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Оф. название:</div> ООО \"'+namecl+'\"'+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Город:</div> '+city+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Область:</div> '+cityr+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Полный адрес:</div> '+ciadress+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Адрес:</div> '+adress+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Улица:</div> '+street+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Дом:</div> '+home+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Индекс:</div> '+ind+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">ФИО:</div> '+fio+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Номер:</div> +7'+numn+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Время работы:</div> '+timework+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">URL:</div> '+urll+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Логин:</div> '+login+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Пароль:</div> '+passw+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Почта:</div> '+mail+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Ключевые слова:</div> '+keysl+br+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Описание:</div> '+desc+br+br;
+                info.innerHTML+='<div style="font-weight: 600;display: contents;">Сфера:</div> '+tupecl+br;
+
+              }
+              };
+            function getinfo(){
+              var namecl = document.getElementById('namecl').value;
+              var fio = document.getElementById('fio').value;
+              var city = document.getElementById('city').value;
+              var numn = document.getElementById('numn').value;
+              var cityr = document.getElementById('cityr').value;
+              var ciadress = document.getElementById('ciadress').value;
+              var timework = document.getElementById('timework').value;
+              var street = document.getElementById('street').value;
+              var mail = document.getElementById('mail').value;
+              var home = document.getElementById('home').value;
+              var keysl = document.getElementById('keysl').value;
+              var adress = document.getElementById('adress').value;
+              var desc = document.getElementById('desc').value;
+              var tupecl = document.getElementById('tupecl').value;
+              var status = document.getElementById('status').value;
+              var passw = document.getElementById('passw').value;
+             var urll = document.getElementById('urll').value;
+              var otr1 = document.getElementById('otr1').value;
+              var otr2 = document.getElementById('otr2').value;
+              var notwww = document.getElementById('notwww').value;
+              var a=document.getElementById('sta');
+              var sta=a.options[a.selectedIndex].text;
+              var ind = document.getElementById('ind').value;
+              //ca(sta,otr1,otr2,"urli",notwww,namecl,"unamecl",city,cityr,ciadress,street,home,adress,numn,"000","namepers",fio,"f","i","o",timework,urll,mail,keysl,desc,tupecl,passw,"login123",numn,numn,numn,numn," "," "," ","Ф",ind);
+              document.getElementById('info').textContent = 'Название: '+namecl;
+            }
+    </script></div>
+</body>
+</html>

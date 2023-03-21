@@ -1,0 +1,12 @@
+#pub p{
+  font-size: 13px;
+  display: table-header-group;
+}
+#pub input{
+  margin-top: 3px;
+}
+body{
+  background: #bbccff;
+  animation: background 0s infinite alternate;
+  box-shadow: 0 0px 0px -120px #b68fff inset;
+}

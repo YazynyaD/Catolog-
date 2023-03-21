@@ -1,0 +1,1 @@
+MakeShortcut.bat "C:\Users\kryue\Desktop\PyScript\catalo5.0" "main" "py" "%userprofile%\Desktop"
