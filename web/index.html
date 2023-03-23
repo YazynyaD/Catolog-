@@ -161,9 +161,9 @@
                     inf.innerHTML+='<p id="pch'+i+'"><input type="checkbox" id="ch'+i+'" value="'+i+'">'+namesite[i-1]+'</p>';
                   }
                   serch.oninput = function() {
-                    inf.innerHTML='';
-                    for(i=1;i<namesite.length+1;i++){
-                      inf.innerHTML+='<p id="pch'+i+'"><input type="checkbox" id="ch'+i+'" value="'+i+'">'+namesite[i-1]+'</p>';
+                    //inf.innerHTML='';
+                    for(i=1;i<namesite.length+1;i++){$('#ch'+i).show();$('#pch'+i).show();
+                      //inf.innerHTML+='<p id="pch'+i+'"><input type="checkbox" id="ch'+i+'" value="'+i+'">'+namesite[i-1]+'</p>';
                       if(!String(namesite[i-1]).includes(String(serch.value))){
                         //inf.innerHTML+='<p><input type="checkbox" id="ch'+i+'" value="'+i+'">'+namesite[i-1]+'</p>';
                       $('#ch'+i).hide();$('#pch'+i).hide();
